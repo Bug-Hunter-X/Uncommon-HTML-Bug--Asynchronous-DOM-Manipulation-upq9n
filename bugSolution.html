@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+
+  <script>
+    // Use an event listener or Promise to ensure the DOM is ready before manipulating it.
+    window.addEventListener('DOMContentLoaded', (event) => {
+      document.getElementById("myDiv").innerHTML = "This text replaces the original text.";
+      setTimeout(function(){
+          document.getElementById("myDiv").style.display = "none";
+      },0);
+    });
+  </script>
+</body>
+</html>
