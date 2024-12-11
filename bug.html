@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+
+  <script>
+    //This is an example of an uncommon bug in HTML where the script execution is out of sync with the DOM.
+    document.getElementById("myDiv").innerHTML = "This text replaces the original text.";
+    // This line attempts to set the innerHTML of myDiv before the element has been fully loaded into the DOM. This can result in an error. 
+    setTimeout(function(){
+        document.getElementById("myDiv").style.display = "none";
+    },0);
+
+  </script>
+</body>
+</html>
